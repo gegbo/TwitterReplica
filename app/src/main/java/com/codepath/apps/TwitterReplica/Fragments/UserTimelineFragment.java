@@ -28,11 +28,10 @@ public class UserTimelineFragment extends TweetsListFragment {
         super.onCreate(savedInstanceState);
 
         client = TwitterApplication.getRestClient(); //singleton client
-        populateTimeline();
+        populateTimeline(getArguments().getString("screen_name"));
 
     }
 
-    // Creates a new fragment given an int and title
     // UserTimelineFragment.newInstance("graceling);
     public static UserTimelineFragment newInstance(String screenName) {
         UserTimelineFragment userFragment  = new UserTimelineFragment();
@@ -44,9 +43,7 @@ public class UserTimelineFragment extends TweetsListFragment {
 
     //Send out an API request to get the timeline json
     //Fill the listview by creating the tweet objects from the json
-    private void populateTimeline() {
-        String screenName = getArguments().getString("screenName");
-
+    private void populateTimeline(String screenName) {
         client.getUserTimeline(screenName, new JsonHttpResponseHandler() {
             //SUCCESS
 

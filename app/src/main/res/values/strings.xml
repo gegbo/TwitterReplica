@@ -5,5 +5,8 @@
     <string name="login_label">Connect With Twitter</string>
     <string name="username">Billy</string>
     <string name="body">Hello!</string>
+    <string name="message">What\'s happening?</string>
+    <string name="tweet">Tweet</string>
+    <string name="user">10</string>
 
 </resources>

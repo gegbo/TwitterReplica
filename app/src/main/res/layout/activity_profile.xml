@@ -44,7 +44,8 @@
             android:textSize="12sp"
             android:id="@+id/tvTagLine"
             android:layout_toRightOf="@+id/ivProfileImage"
-            android:layout_toEndOf="@+id/ivProfileImage" />
+            android:layout_toEndOf="@+id/ivProfileImage"
+            android:layout_below="@id/tvFullName"/>
 
     </RelativeLayout>
 

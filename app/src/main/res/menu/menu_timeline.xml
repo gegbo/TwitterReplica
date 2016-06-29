@@ -4,6 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.codepath.apps.TwitterReplica.Activities.TimelineActivity">
 
+
+    <item
+        android:id = "@+id/compose"
+        app:showAsAction = "always"
+        android:icon = "@drawable/ic_compose"
+        android:title ="Compose"
+        android:onClick = "onComposeView">
+    </item>
+
     <item
         android:id = "@+id/profile"
         app:showAsAction = "ifRoom"
@@ -11,4 +20,6 @@
         android:title ="Profile"
         android:onClick = "onProfileView">
     </item>
+
+
 </menu>

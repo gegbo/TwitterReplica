@@ -16,36 +16,42 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
+import org.parceler.Parcels;
 
 import cz.msebera.android.httpclient.Header;
 
 public class ProfileActivity extends AppCompatActivity {
 
     TwitterClient client;
+    String username;
     User user;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         client = TwitterApplication.getRestClient();
 
-        client.getUserInfo(new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                user = User.fromJson(response);
+        int code = getIntent().getIntExtra("code",-1);
 
-                getSupportActionBar().setTitle("@"+user.getScreenName());
-                populateProfileHeader(user);
-            }
-        });
+        if(code == 10) {
+            client.verifyUserInfo(new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    user = User.fromJson(response);
+                    populateProfileHeader(user);
 
+                }
 
-
-        String screenName = getIntent().getStringExtra("screenName");
+            });
+        }
+        else if(code == 15) {
+            user = Parcels.unwrap(getIntent().getParcelableExtra("user"));
+            username = user.getScreenName();
+            populateProfileHeader(user);
+        }
 
         if(savedInstanceState == null) {
-            UserTimelineFragment utf = UserTimelineFragment.newInstance(screenName);
+            UserTimelineFragment utf = UserTimelineFragment.newInstance(username);
 
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.flContainer,utf);

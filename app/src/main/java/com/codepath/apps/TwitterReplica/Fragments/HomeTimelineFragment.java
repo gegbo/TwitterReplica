@@ -12,8 +12,6 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
 import cz.msebera.android.httpclient.Header;
 
 /**
@@ -33,14 +31,13 @@ public class HomeTimelineFragment extends TweetsListFragment {
 
     //Send out an API request to get the timeline json
     //Fill the listview by creating the tweet objects from the json
-    private void populateTimeline() {
+    public void populateTimeline() {
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             //SUCCESS
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
-                ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
-                addAll(tweets);
+                addAll(Tweet.fromJSONArray(response));
             }
 
             //FAILURE
@@ -51,5 +48,11 @@ public class HomeTimelineFragment extends TweetsListFragment {
 
 
         });
+    }
+
+    public void appendTweet(Tweet tweet) {
+        tweets.add(0,tweet);
+        aTweets.notifyDataSetChanged();
+        lvTweets.setSelection(0);
     }
 }

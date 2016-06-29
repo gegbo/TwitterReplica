@@ -2,10 +2,12 @@ package com.codepath.apps.TwitterReplica.Models;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 /**
  * Created by gegbo on 6/27/16.
  */
+@Parcel
 public class User {
 
 

@@ -11,10 +11,10 @@ The following **required** functionality is completed:
 * [X] User can **sign in to Twitter** using OAuth login process
 * [X] User can **switch between Timeline and Mention views using tabs**
   * [X] User is displayed the username, name, and body for each tweet
-  * [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
-* [ ] User can **compose and post a new tweet**
-  * [ ] User can click a "Compose" icon in the Action Bar on the top right
-  * [ ] User can then enter a new tweet from a second activity and then post this to twitter
+  * [X] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
+* [X] User can **compose and post a new tweet**
+  * [X] User can click a "Compose" icon in the Action Bar on the top right
+  * [X] User can then enter a new tweet from a second activity and then post this to twitter
 * [X] User can navigate to **view their own profile**
   * [X] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
 * [ ] User can **click on the profile image** in any tweet to see **another user's** profile.
@@ -53,9 +53,8 @@ Here's a walkthrough of implemented user stories:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-## Notes
-
-Describe any challenges encountered while building the app.
+## Credits
+- Compose icon created by Mike Ashley
 
 ## Open-source libraries used
 
