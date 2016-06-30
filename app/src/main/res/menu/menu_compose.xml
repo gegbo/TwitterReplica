@@ -3,12 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.codepath.apps.TwitterReplica.Activities.ComposeActivity">
+
+    <item
+        android:id="@+id/micount"
+        app:showAsAction="always"
+        android:title="@string/count">
+    </item>
     <item
         android:title="@string/tweet"
         android:id="@+id/Tweet"
         app:showAsAction="always"
         android:onClick="onTweet"
-        android:icon="@mipmap/ic_tweet"
-        >
+        android:icon="@mipmap/ic_tweet">
     </item>
 </menu>

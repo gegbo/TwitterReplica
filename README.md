@@ -17,13 +17,13 @@ The following **required** functionality is completed:
   * [X] User can then enter a new tweet from a second activity and then post this to twitter
 * [X] User can navigate to **view their own profile**
   * [X] User can see picture, tagline, # of followers, # of following, and tweets on their profile.
-* [ ] User can **click on the profile image** in any tweet to see **another user's** profile.
- * [ ] User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
+* [X] User can **click on the profile image** in any tweet to see **another user's** profile.
+ * [X] User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
  * [X] Profile view includes that user's timeline of recent tweets
 
 The following **optional** features are implemented:
 
-* [ ] While composing a tweet, user can see a character counter with characters remaining for tweet out of 140
+* [X] While composing a tweet, user can see a character counter with characters remaining for tweet out of 140
 * [ ] User can **pull down to refresh tweets** in either timeline
 * [ ] User can **search for tweets matching a particular query** and see results
 * [ ] User can see embedded image media within the tweet detail view.

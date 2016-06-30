@@ -8,5 +8,6 @@
     <string name="message">What\'s happening?</string>
     <string name="tweet">Tweet</string>
     <string name="user">10</string>
+    <string name="count">140</string>
 
 </resources>

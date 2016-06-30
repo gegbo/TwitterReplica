@@ -22,5 +22,6 @@
         android:hint="@string/message"
         android:gravity="top"
         android:singleLine="false"
-        android:background="#00ffffff" />
+        android:background="#00ffffff"
+        android:maxLength="140"/>
 </RelativeLayout>

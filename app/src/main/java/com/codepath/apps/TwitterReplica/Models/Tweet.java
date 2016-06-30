@@ -106,13 +106,29 @@ public class Tweet {
         }
 
         if(relativeDate.contains("seconds") || relativeDate.contains("second")) {
-            return relativeDate.substring(0,2) + "s";
+            if(!relativeDate.contains("in"))
+            {
+                return relativeDate.substring(0,2) + "s";
+            }
+            else {
+                return relativeDate.substring(3,5) + "s";
+            }
         }
         else if(relativeDate.contains("minutes") || relativeDate.contains("minute")) {
-            return relativeDate.substring(0,2) + "m";
+            if(!relativeDate.contains("in")) {
+                return relativeDate.substring(0,2) + "m";
+            }
+            else {
+                return relativeDate.substring(3,5) + "m";
+            }
         }
         else if(relativeDate.contains("hours") || relativeDate.contains("hour")) {
-            return relativeDate.substring(0,2) + "h";
+            if(!relativeDate.contains("in")) {
+                return relativeDate.substring(0,2) + "h";
+            }
+            else {
+                return relativeDate.substring(3,5) + "h";
+            }
         }
         else if(relativeDate.contains("Yesterday")) {
             return "1d";

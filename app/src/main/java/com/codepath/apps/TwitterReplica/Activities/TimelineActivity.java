@@ -21,8 +21,6 @@ import org.parceler.Parcels;
  public class TimelineActivity extends AppCompatActivity {
 
      public final int COMPOSE_REQUEST_CODE  = 500;
-     HomeTimelineFragment htf;
-     MentionsTimelineFragment mtf;
      ViewPager vpPager;
      TweetsPagerAdapter tpa;
 
@@ -40,9 +38,6 @@ import org.parceler.Parcels;
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip)findViewById(R.id.tabs);
         //Attach the tab strip to the viewpager
         tabStrip.setViewPager(vpPager);
-
-        htf = new HomeTimelineFragment();
-        mtf = new MentionsTimelineFragment();
 
     }
 

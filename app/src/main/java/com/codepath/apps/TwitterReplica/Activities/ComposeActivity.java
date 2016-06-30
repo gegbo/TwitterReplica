@@ -3,6 +3,8 @@ package com.codepath.apps.TwitterReplica.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -22,7 +24,8 @@ public class ComposeActivity extends AppCompatActivity {
 
     EditText etMessage;
     TwitterClient client;
-
+    Menu menu;
+    MenuItem miCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +34,31 @@ public class ComposeActivity extends AppCompatActivity {
 
         etMessage = (EditText) findViewById(R.id.etTweet);
         client = TwitterApplication.getRestClient();
+
+        final TextWatcher TextEditorWatcher = new TextWatcher() {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                int remaining = 140 - s.length();
+                miCount.setTitle(String.valueOf(remaining));
+            }
+
+            public void afterTextChanged(Editable s) {
+            }
+        };
+        etMessage.addTextChangedListener(TextEditorWatcher);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+
         getMenuInflater().inflate(R.menu.menu_compose,menu);
-        return super.onCreateOptionsMenu(menu);
+        this.menu = menu;
+        miCount = menu.findItem(R.id.micount);
+        return true;
     }
 
     @Override
