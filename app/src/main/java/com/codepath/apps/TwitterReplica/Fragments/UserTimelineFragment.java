@@ -51,6 +51,7 @@ public class UserTimelineFragment extends TweetsListFragment {
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
                 addAll(tweets);
+                swipeContainer.setRefreshing(false);
             }
 
             //FAILURE
@@ -61,5 +62,10 @@ public class UserTimelineFragment extends TweetsListFragment {
 
 
         });
+    }
+
+    @Override
+    protected void refreshTweets() {
+        populateTimeline(getArguments().getString("screen_name"));
     }
 }

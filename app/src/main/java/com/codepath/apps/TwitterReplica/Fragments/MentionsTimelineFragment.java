@@ -42,6 +42,7 @@ public class MentionsTimelineFragment extends TweetsListFragment {
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 ArrayList<Tweet> tweets = Tweet.fromJSONArray(response);
                 addAll(tweets);
+                swipeContainer.setRefreshing(false);
             }
 
             //FAILURE
@@ -52,5 +53,10 @@ public class MentionsTimelineFragment extends TweetsListFragment {
 
 
         });
+    }
+
+    @Override
+    protected void refreshTweets() {
+        populateTimeline();
     }
 }

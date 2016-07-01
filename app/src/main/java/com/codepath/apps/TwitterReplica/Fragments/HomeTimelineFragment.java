@@ -6,7 +6,6 @@ import android.util.Log;
 
 import com.codepath.apps.TwitterReplica.Models.Tweet;
 import com.codepath.apps.TwitterReplica.TwitterApplication;
-import com.codepath.apps.TwitterReplica.TwitterClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
@@ -18,7 +17,7 @@ import cz.msebera.android.httpclient.Header;
  * Created by gegbo on 6/27/16.
  */
 public class HomeTimelineFragment extends TweetsListFragment {
-    private TwitterClient client;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,6 +28,7 @@ public class HomeTimelineFragment extends TweetsListFragment {
 
     }
 
+
     //Send out an API request to get the timeline json
     //Fill the listview by creating the tweet objects from the json
     public void populateTimeline() {
@@ -38,6 +38,7 @@ public class HomeTimelineFragment extends TweetsListFragment {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 addAll(Tweet.fromJSONArray(response));
+                swipeContainer.setRefreshing(false);
             }
 
             //FAILURE
@@ -54,5 +55,10 @@ public class HomeTimelineFragment extends TweetsListFragment {
         tweets.add(0,tweet);
         aTweets.notifyDataSetChanged();
         lvTweets.setSelection(0);
+    }
+
+    @Override
+    protected void refreshTweets() {
+        populateTimeline();
     }
 }
