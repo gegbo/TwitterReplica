@@ -65,6 +65,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         tvUsername.setText(tweet.getUser().getScreenName());
         tvBody.setText(tweet.getBody());
         tvTime.setText(tweet.getCreatedAt());
+        Log.d("TIME",tweet.getCreatedAt());
         tvFavoriteCount.setText(String.valueOf(tweet.getFavorites()));
         tvRetweetCount.setText(String.valueOf(tweet.getRetweets()));
         ivProfileImage.setImageResource(0);
@@ -97,7 +98,6 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         ivFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("FAVORITE", String.valueOf(tweet.getFavorited()));
                 if(tweet.getFavorited() == true) {
                     client.unfavorite(tweet.getUid(),new JsonHttpResponseHandler());
                 }
