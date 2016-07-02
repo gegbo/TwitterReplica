@@ -8,7 +8,7 @@
     <item
         android:id = "@+id/compose"
         app:showAsAction = "always"
-        android:icon = "@drawable/ic_compose"
+        android:icon = "@drawable/compose_icon"
         android:title ="Compose"
         android:onClick = "onComposeView">
     </item>
@@ -16,7 +16,7 @@
     <item
         android:id = "@+id/profile"
         app:showAsAction = "ifRoom"
-        android:icon = "@drawable/ic_action_name"
+        android:icon = "@drawable/profile_icon"
         android:title ="Profile"
         android:onClick = "onProfileView">
     </item>

@@ -78,6 +78,7 @@ import org.parceler.Parcels;
          }
      }
 
+
      //return the order of the fragments in the view pager
      public class TweetsPagerAdapter extends SmartFragmentStatePagerAdapter {
          private String tabTitles[] = {"Home","Mentions"};

@@ -67,7 +67,7 @@ public class ComposeActivity extends AppCompatActivity {
     }
 
     public void onTweet(MenuItem item) {
-        client.postTweet(etMessage.getText().toString(),new JsonHttpResponseHandler() {
+        client.postTweet(etMessage.getText().toString(),0,false,new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 Tweet tweet = Tweet.fromJSON(response);

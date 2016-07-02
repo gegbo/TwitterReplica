@@ -23,6 +23,10 @@ public class Tweet {
     private long uid; //unique id for the tweet
     private User user;
     private String createdAt;
+    private int favorites;
+    private int retweets;
+    private boolean favorited;
+    private boolean retweeted;
 
 
     public User getUser() {
@@ -37,9 +41,17 @@ public class Tweet {
         return uid;
     }
 
+    public boolean getFavorited() { return favorited;}
+
+    public boolean getRetweeted() { return retweeted; }
+
     public String getCreatedAt() {
         return createdAt;
     }
+
+    public int getFavorites() { return  favorites; }
+
+    public int getRetweets() { return  retweets; }
 
     public void setBody(String body) {
         this.body = body;
@@ -65,6 +77,10 @@ public class Tweet {
             tweet.uid = jsonObject.getLong("id");
             tweet.createdAt = getRelativeTimeAgo(jsonObject.getString("created_at"));
             tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
+            tweet.favorited = jsonObject.getBoolean("favorited");
+            tweet.favorites = jsonObject.getInt("favorite_count");
+            tweet.retweeted = jsonObject.getBoolean("retweeted");
+            tweet.retweets = jsonObject.getInt("retweet_count");
         } catch (JSONException e) {
             e.printStackTrace();
         }

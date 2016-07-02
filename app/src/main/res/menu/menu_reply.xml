@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="@string/tweet"
+        android:id="@+id/Reply"
+        app:showAsAction="always"
+        android:onClick="onTweet"
+        android:icon="@mipmap/ic_tweet">
+    </item>
+</menu>

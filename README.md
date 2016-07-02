@@ -24,7 +24,7 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 * [X] While composing a tweet, user can see a character counter with characters remaining for tweet out of 140
-* [ ] User can **pull down to refresh tweets** in either timeline
+* [X] User can **pull down to refresh tweets** in either timeline
 * [ ] User can **search for tweets matching a particular query** and see results
 * [ ] User can see embedded image media within the tweet detail view.
 * [ ] Improve the user interface and theme the app to feel twitter branded with colors and styles
@@ -32,11 +32,11 @@ The following **optional** features are implemented:
 * [ ] User can **"reply" to any tweet on their home timeline**
   * [ ] The user that wrote the original tweet is automatically "@" replied in compose
 * [ ] User can click on a tweet to be **taken to a "detail view"** of that tweet
- * [ ] User can take favorite (and unfavorite) or retweet actions on a tweet
+ * [X] User can take favorite (and unfavorite) or retweet actions on a tweet
 * [ ] User can **open the twitter app offline and see last loaded tweets**. Persisted in SQLite tweets are refreshed on every application launch. While "live data" is displayed when app can get it from Twitter API, it is also saved for use in an offline mode.
 * [ ] Compose activity is replaced with a modal overlay
 * [ ] User can **click a link within a tweet body** on tweet details view. The click will launch the web browser with relevant page opened.
-* [ ] Used Parcelable instead of Serializable leveraging the popular [Parceler library](http://guides.codepath.com/android/Using-Parceler) when passing data between activities.
+* [X] Used Parcelable instead of Serializable leveraging the popular [Parceler library](http://guides.codepath.com/android/Using-Parceler) when passing data between activities.
 * [ ] Replaced all icon drawables and other static image assets with [vector drawables](http://guides.codepath.com/android/Drawables#vector-drawables) where appropriate.
 * [ ] User can view following / followers list through the profile of a user
 * [ ] Apply the popular Butterknife annotation library to reduce view boilerplate.
@@ -55,6 +55,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Credits
 - Compose icon created by Mike Ashley
+- Reply icon created by Rohith M S
 
 ## Open-source libraries used
 
