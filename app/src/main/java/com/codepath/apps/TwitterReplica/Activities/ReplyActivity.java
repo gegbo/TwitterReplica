@@ -26,7 +26,7 @@ public class ReplyActivity extends AppCompatActivity {
         etReply.setText("@"+tweet.getUser().getScreenName()+":");
     }
 
-    @Override 
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.menu_reply,menu);
